@@ -1,0 +1,12 @@
+name: "Pull Request Labeler"
+on: [pull_request]
+
+jobs:
+  build:
+    name: Create label
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@main
+      with:
+        configuration-path: .github/labeler.config.yml
+        sync-labels: true
